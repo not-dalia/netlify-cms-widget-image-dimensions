@@ -1,7 +1,7 @@
 import './bootstrap.js'
 import CMS, { init } from 'netlify-cms'
 import 'netlify-cms/dist/cms.css'
-import { Control, Preview, Schema } from '../src'
+import { ImageDimensionsControl, ImageDimensionsPreview, ImageDimensionsSchema } from '../src'
 
 const config = {
   backend: {
@@ -23,6 +23,6 @@ const config = {
   }],
 }
 
-CMS.registerWidget('image_dimensions', Control, Preview, Schema)
+CMS.registerWidget('image_dimensions', ImageDimensionsControl, ImageDimensionsPreview, ImageDimensionsSchema )
 
 init({ config })
