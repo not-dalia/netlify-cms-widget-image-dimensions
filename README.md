@@ -1,6 +1,8 @@
 # netlify-cms-widget-image-dimensions
 
-A modified Netlify CMS image widget that allows restricting image dimensions. Hacky and experimental.
+A modified Netlify CMS image widget that allows restricting image dimensions. 
+
+**Warning**: Very hacky and experimental.
 
 ## Install
 
@@ -32,13 +34,19 @@ Add to your Netlify CMS configuration:
 
 ```yaml
     fields:
-      - { name: <fieldname>, label: <fieldlabel>, widget: <name> }
+      - { name: <fieldname>, label: <fieldlabel>, widget: image_dimensions }
 ```
 
-## Configuration
+To set a limit on the minimum width/height of the image, use `min_width` and `min_height`. To set the width/height to be an exact value, use `exact_width` and `exact_height`. If you configure both `min_width` and `exact_width` then `min_width` will be ignored, and likewise for `min_height` and `exact_height`. 
 
-Explain any custom configuration steps here, or omit the section if there are none.
+To configure the validation/error message (*highly recommended*), use `validation`. 
 
-## Support
-
-For help with this widget, open an [issue](https://github.com/<user>/<repo>) or ask the Netlify CMS community in [Gitter](https://gitter.im/netlify/netlifycms).
+```yaml
+    fields:
+      - name: <fieldname>
+        label: <fieldlabel>
+        widget: image_dimensions
+        exact_width: 300
+        exact_height: 200
+        validation: "Image must be 300x200px"
+```
