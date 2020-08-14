@@ -1,0 +1,6 @@
+node_modules
+dist
+public
+*.log
+.DS_Store
+README.old.md
